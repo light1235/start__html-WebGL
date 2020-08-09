@@ -41,3 +41,19 @@ loader.load("../assets/img/smoke-1.png", function (texture) {
      let cloud = new THREE.Mesh(cloudGeo,cloudMaterial);
      scene.add(cloud);
 })
+//Добавление изображения
+let meshTexture, loader;
+
+meshTexture = new THREE.Texture();
+loader = new THREE.ImageLoader();
+
+loader.load('../assets/img/2.jpg', function(event){
+     meshTexture.image = event;
+     meshTexture.needsUpdate = true;
+});
+
+var geometry = new THREE.PlaneBufferGeometry( 20, 10, 10 );
+var material = new  THREE.MeshBasicMaterial({map: meshTexture})
+let mesh = new THREE.Mesh(geometry,material);
+scene.add(mesh);
+
