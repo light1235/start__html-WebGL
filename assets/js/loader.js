@@ -31,29 +31,23 @@ function handle_load(gltf){
 }
 
 //---------------------------
-let loader = new  THREE.TextureLoader();
-loader.load("../assets/img/smoke-1.png", function (texture) {
-     cloudGeo = new THREE.PlaneBufferGeometry(500,500);
-     cloudMaterial = new  THREE.MeshLambertMaterial({
-          map:texture,
-          transparent: true
-     })
-     let cloud = new THREE.Mesh(cloudGeo,cloudMaterial);
-     scene.add(cloud);
+//TextureLoader
+
+//V1
+let sprite = new THREE.TextureLoader().load('../assets/img/starts.png');
+
+const material = new  THREE.PointsMaterial({
+     color:0xaaaaaa,
+     size:0.7,
+     map:sprite
 })
-//Добавление изображения
-let meshTexture, loader;
 
-meshTexture = new THREE.Texture();
-loader = new THREE.ImageLoader();
+//V2
 
-loader.load('../assets/img/2.jpg', function(event){
-     meshTexture.image = event;
-     meshTexture.needsUpdate = true;
-});
 
-var geometry = new THREE.PlaneBufferGeometry( 20, 10, 10 );
-var material = new  THREE.MeshBasicMaterial({map: meshTexture})
-let mesh = new THREE.Mesh(geometry,material);
-scene.add(mesh);
+const material = new  THREE.PointsMaterial({
+     color:0xaaaaaa,
+     size:0.7,
+     map:new  THREE.TextureLoader().load('../assets/img/1.jpg')
+})
 
