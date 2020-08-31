@@ -14,18 +14,14 @@
   "devDependencies": {
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "babel-loader": "^8.1.0",
+     "webpack-glsl-loader": "^1.0.1"
   },
   "dependencies": {
-    "browserify": "^16.5.1",
-    "canvas-sketch": "^0.7.3",
-    "canvas-sketch-util": "^1.10.0",
-    "glsl-shader-loader": "^0.1.6",
-    "glslify": "^7.0.0",
-    "glslify-loader": "^2.0.0",
-    "raw-loader": "^4.0.1",
-    "watchify": "^3.11.1",
-    "webpack-glsl-loader": "^1.0.1"
+ 
   },
   "browserify": {
     "transform": [
