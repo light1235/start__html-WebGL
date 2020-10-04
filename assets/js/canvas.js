@@ -20,4 +20,16 @@ window.addEventListener('resize', function () {
      canvas.classList.add('sample-canvas');
      doc.appendChild(canvas);
 }
+function draw(){
+          
+}
 
+
+let time = 0;
+function render(){
+     draw();
+     time++;
+     window.requestAnimationFrame(render);
+}
+
+render();
