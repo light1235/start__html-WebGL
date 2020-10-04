@@ -1,10 +1,14 @@
 let canvas = document.createElement('canvas');
 let ctx = canvas.getContext('2d');
-// canvas.width = window.innerWidth;
-// canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 let doc = document.querySelector('.main');
 canvas.classList.add('template-canvas');
 doc.appendChild(canvas);
+window.addEventListener('resize', function () {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+})
 
 
 {let size = 200;
