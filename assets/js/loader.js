@@ -51,3 +51,22 @@ const material = new  THREE.PointsMaterial({
      map:new  THREE.TextureLoader().load('../assets/img/1.jpg')
 })
 
+
+//font-loader
+//https://gero3.github.io/facetype.js/
+
+const fontLoader = new THREE.FontLoader();
+
+fontLoader.load( '../assets/js/font.json', function ( font ) {
+
+     var geometry = new THREE.TextGeometry( 'Hello three.js!', {
+          font: font,
+          size: 4.05,
+          height: 0.01,
+     } );
+     const material = new   THREE.MeshBasicMaterial( {color: 0xff0000});
+     const mesh = new THREE.Mesh(geometry,material);
+     geometry.center();
+     scene.add(mesh);
+     scene.add(new THREE.AxesHelper(500,500));
+});
