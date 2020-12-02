@@ -53,6 +53,21 @@ const material = new  THREE.PointsMaterial({
      })
 }
 
+//TextureLoader V3///////////////////////
+
+const cubemap = new THREE.CubeTextureLoader()
+     .setPath( `${assetPath}skybox1_` )
+     .load( [
+          'px.jpg',
+          'nx.jpg',
+          'py.jpg',
+          'ny.jpg',
+          'pz.jpg',
+          'nz.jpg'
+     ] );
+
+scene.background = cubemap;
+
 //font-loader////////////////////////////////////////////////////////////
 
 {
