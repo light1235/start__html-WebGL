@@ -68,6 +68,11 @@ const cubemap = new THREE.CubeTextureLoader()
 
 scene.background = cubemap;
 
+const material = new  THREE.MeshStandardMaterial({
+     envMap: sprite,
+});
+
+
 //font-loader////////////////////////////////////////////////////////////
 
 {
