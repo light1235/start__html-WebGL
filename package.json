@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "webpack --mode development --watch",
     "build": "webpack --mode production",
-    "build1": "watchify assets/js/shader.js -o dist/bundle.js",
+    "shader": "webpack assets/js/shader.js -o dist/bundle.js --watch",
     "start": "webpack-dev-server --mode development --open"
   },
   "author": "lighty",
