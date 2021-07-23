@@ -41,7 +41,7 @@ let sprite = new THREE.TextureLoader().load('../assets/img/starts.png');
 const material = new  THREE.PointsMaterial({
      color:0xaaaaaa,
      size:0.7,
-     map:sprite
+     map:sprite 
 })
 //TextureLoaderV2/////////////////////////////////////////////////////////////
 
@@ -51,6 +51,11 @@ const material = new  THREE.PointsMaterial({
           size:0.7,
           map:new  THREE.TextureLoader().load('../assets/img/1.jpg')
      })
+}
+// TextureLoader preload
+let sprite = new THREE.TextureLoader();
+sprite.load('../assets/img/1.jpg', function(materials){
+     materials.preload();
 }
 
 //TextureLoader V3///////////////////////
