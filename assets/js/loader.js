@@ -35,6 +35,54 @@ function handle_load(gltf){
 }
 
 //---------------------------
+// Model loader with Draco
+const loader = new GLTFLoader();
+
+const dracoLoader = new DRACOLoader();
+// dracoLoader.setDecoderPath( 'three/examples/js/libs/draco/' );
+loader.setDRACOLoader( dracoLoader );
+
+loader.load('./img/model.glb', handle_load);
+
+let mesh;
+
+function handle_load(gltf){
+     mesh = gltf.scene;
+     mesh.material = new THREE.MeshStandardMaterial( { color: 0x606060 } );
+     mesh.castShadow = true;
+     mesh.receiveShadow = true;
+     scene.add(mesh);
+     mesh.position.z = -10;
+     mesh.position.y = -80;
+     scene.add(new THREE.AxesHelper(500,500));
+     animate();
+}
+//
+
+//Model loader STL
+
+const loader = new STLLoader();
+loader.load( './img/pose.stl', function ( geometry ) {
+
+     const material = new THREE.MeshPhongMaterial( { color: 0x606060, specular: 0x111111, shininess: 200 } );
+     const mesh = new THREE.Mesh( geometry, material );
+
+     mesh.position.z = -10;
+     mesh.position.y = -70;
+
+     mesh.rotation.z = 50;
+     mesh.rotation.y = 50;
+     mesh.rotation.x = 250;
+
+     mesh.castShadow = true;
+     mesh.receiveShadow = true;
+
+     scene.add( mesh );
+
+} );
+
+
+
 //TextureLoader////////////////////////////////////////////////////////
 let sprite = new THREE.TextureLoader().load('../assets/img/starts.png');
 
