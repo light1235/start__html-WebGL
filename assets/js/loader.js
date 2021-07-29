@@ -60,7 +60,7 @@ function handle_load(gltf){
 //
 
 //Model loader STL
-
+import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js';
 const loader = new STLLoader();
 loader.load( './img/pose.stl', function ( geometry ) {
 
