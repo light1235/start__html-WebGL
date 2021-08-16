@@ -9,6 +9,8 @@ import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPa
 import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass.js';
 import fragmentShader from "../shaders/fragment.glsl";
 import vertexShader from "../shaders/vertex.glsl";
+import BloomVetex from '../shaders/vertex-bloom.glsl';
+import BloomFragment from '../shaders/fragment-bloom.glsl';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 45, window.innerWidth/window.innerHeight, 0.1, 1000 );
@@ -66,8 +68,8 @@ const finalPass = new ShaderPass(
                     value: bloomComposer.renderTarget2.texture
                }
           },
-          fragmentShader,
-          vertexShader,
+          fragmentShader:BloomFragment,
+          vertexShader:BloomVetex,
           defines: {}
      }), "baseTexture"
 );
