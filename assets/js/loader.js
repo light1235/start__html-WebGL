@@ -20,6 +20,13 @@ scene.add(hlight);
 
 //---------------------------
 
+//React load gltf
+import modelUrl from './model3.glb';
+loader.load(modelUrl, handle_load);
+
+//---------------------------
+
+
 //Model-loader-V2//////////////////////////////////////////////////////////
 let loader = new THREE.GLTFLoader();
 loader.load('scene.gltf', handle_load);
