@@ -15,6 +15,7 @@ window.addEventListener('resize', function () {
      let width = window.innerWidth;
      let height = window.innerHeight;
      renderer.setSize(width,height);
+     renderer.setPixelRatio(Math.min(window.devicePixelRatio,2))
      camera.aspect = width / height;
      camera.updateProjectionMatrix();
 });
