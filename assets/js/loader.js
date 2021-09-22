@@ -89,7 +89,13 @@ loader.load( './img/pose.stl', function ( geometry ) {
 
 } );
 
-
+//public folder
+const image = new Image();
+let texture = new THREE.Texture(image)
+image.onload = () => {
+     texture.needsUpdate = true;
+}
+image.src = '../dist/1.jpg';
 
 //TextureLoader////////////////////////////////////////////////////////
 let sprite = new THREE.TextureLoader().load('../assets/img/starts.png');
