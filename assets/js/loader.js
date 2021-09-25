@@ -49,6 +49,8 @@ const dracoLoader = new DRACOLoader();
 // dracoLoader.setDecoderPath( 'three/examples/js/libs/draco/' );
 // dracoLoader.setDecoderPath( 'https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/js/libs/draco/');
 loader.setDRACOLoader( dracoLoader );
+// закинуть в папку паблик папку draco
+dracoLoader.setDecoderPath( '/draco/' );
 
 loader.load('./img/model.glb', handle_load);
 
