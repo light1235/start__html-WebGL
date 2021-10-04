@@ -23,6 +23,7 @@ scene.add(hlight);
 //React load gltf
 import modelUrl from './model3.glb';
 loader.load(modelUrl, handle_load);
+const MainFont = '/bold.json'; // если public/bold.json и с img тоже самое
 
 //---------------------------
 
