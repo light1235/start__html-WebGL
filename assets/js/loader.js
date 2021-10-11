@@ -121,7 +121,7 @@ const material = new  THREE.PointsMaterial({
 // TextureLoader preload
 let sprite = new THREE.TextureLoader();
 sprite.load('../assets/img/1.jpg', function(materials){
-     materials.preload();
+     sprite.preload();
 }
 
 //TextureLoader V3///////////////////////
