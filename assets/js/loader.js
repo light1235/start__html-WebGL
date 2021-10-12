@@ -168,22 +168,14 @@ const material = new  THREE.MeshStandardMaterial({
 
 
 //font-loader with mesh Accessing
+import MainFont from '../../assets/fonts/bold.json';
 
-{
-     let text;
-
-     fontLoader.load(
-          '../assets/js/font.json',
-          function(font) {
-               var geometry = new THREE.TextGeometry('BLASTER!', {
-                    font: font,
-                    size: 8.2,
-                    height: 3,
-               });
-               var material = new THREE.MeshBasicMaterial({color: 0xff0000});
-               text = new THREE.Mesh(geometry, material);
-               geometry.center();
-               scene.add(text);
-          },
-     );
-}
+const font = new THREE.Font( MainFont );
+let Link1Geometry = new THREE.TextGeometry( 'Hello three.js!', {
+     font:font,
+     size: 4.05,
+     height: 0.01,
+} );
+const FontMaterial = new   THREE.MeshBasicMaterial( {color: 'white',opacity:1,transparent:true});
+let DeepText = new THREE.Mesh(Link1Geometry,FontMaterial);
+scene.add(DeepText)
