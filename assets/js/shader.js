@@ -1,5 +1,5 @@
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera( 45, window.innerWidth/window.innerHeight, 0.1, 1000 );
+const camera = new THREE.OrthographicCamera( -1, 1 , 1, -1, 0.1, 100 );
 
 
 
@@ -34,7 +34,7 @@ let controls = new  THREE.OrbitControls(camera,renderer.domElement);
 
 
 
-const geometry = new THREE.BoxGeometry( 5,5,5 );
+const geometry = new THREE.PlaneGeometry( 2,2 );
 // const material = new  THREE.MeshNormalMaterial({wireframe: true});
 const material = new  THREE.ShaderMaterial({
           fragmentShader,
