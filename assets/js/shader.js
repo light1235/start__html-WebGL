@@ -1,9 +1,6 @@
 const scene = new THREE.Scene();
 const camera = new THREE.OrthographicCamera( -1, 1 , 1, -1, 0.1, 100 );
 
-
-
-
 let renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.setClearColor(0xFFFCFF);
@@ -33,7 +30,6 @@ gui.add(ball,'rotationY').min(-0.2).max(0.2).step(0.001);
 let controls = new  THREE.OrbitControls(camera,renderer.domElement);
 
 
-
 const geometry = new THREE.PlaneGeometry( 2,2 );
 // const material = new  THREE.MeshNormalMaterial({wireframe: true});
 const material = new  THREE.ShaderMaterial({
@@ -45,7 +41,6 @@ const material = new  THREE.ShaderMaterial({
      });
 const mesh = new THREE.Mesh(geometry,material);
 scene.add(mesh);
-
 
 
 camera.position.z = 20;
