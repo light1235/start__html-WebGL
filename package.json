@@ -28,7 +28,8 @@
     "glsl-shader-loader": "^0.1.6",
     "glslify": "^7.0.0",
     "glslify-loader": "^2.0.0",
-    "raw-loader": "^4.0.1"
+    "raw-loader": "^4.0.1",
+     "three": "^0.134.0"
   },
   "browserify": {
     "transform": [
