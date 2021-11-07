@@ -1,3 +1,6 @@
+import * as THREE from 'three/build/three.module.js';
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+
 const scene = new THREE.Scene();
 const camera = new THREE.OrthographicCamera( -1, 1 , 1, -1, 0.1, 100 );
 
