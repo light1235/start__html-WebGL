@@ -55,7 +55,7 @@ gl_Position = projectionMatrix * modelViewMatrix * vec4(position.xyz, 1.0);
 
 let gui = new dat.GUI();
 gui.add(ball,'rotationY').min(-0.2).max(0.2).step(0.001);
-let controls = new  THREE.OrbitControls(camera,renderer.domElement);
+let controls = new  OrbitControls(camera,renderer.domElement);
 
 
 const geometry = new THREE.BoxGeometry( 5,5,5 );
