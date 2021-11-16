@@ -32,12 +32,12 @@ scene.add(new THREE.GridHelper(20, 20));
 let controls = new  OrbitControls(camera,renderer.domElement);
 
 
-const geometry = new THREE.BoxGeometry( 1,1,1 );
+const geometry = new THREE.BoxGeometry( 0.1,0.1,0.1 );
 const material = new  THREE.MeshNormalMaterial({});
 
 const mesh = new THREE.Mesh(geometry,material);
 scene.add(mesh);
-mesh.position.set(0, -1.5, -2.5);
+mesh.position.set(0, 0, -0.5);
 
 
 const clock = new THREE.Clock();
