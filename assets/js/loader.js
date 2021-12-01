@@ -1,6 +1,6 @@
 
 //Model-loader/////////////////////////////////////////////////////////
-hlight = new THREE.AmbientLight (0x404040,100);
+let hlight = new THREE.AmbientLight (0x404040,100);
 scene.add(hlight);
 {
      const loader = new THREE.GLTFLoader();
