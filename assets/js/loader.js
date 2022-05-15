@@ -179,3 +179,16 @@ let Link1Geometry = new THREE.TextGeometry( 'Hello three.js!', {
 const FontMaterial = new   THREE.MeshBasicMaterial( {color: 'white',opacity:1,transparent:true});
 let DeepText = new THREE.Mesh(Link1Geometry,FontMaterial);
 scene.add(DeepText)
+
+
+//Fog
+const camera = new THREE.PerspectiveCamera( 45, window.innerWidth/window.innerHeight, 0.1, 1000 );
+//V1
+let fogColor = new THREE.Color(0xefd1b5);
+scene.background = fogColor; // Setting fogColor as the background color also
+scene.fog = new THREE.Fog(fogColor, 0.25, 4);
+camera.position.set(0,0,2);
+//V2
+fogColor = new THREE.Color(0x00af00);
+scene.background = fogColor;
+scene.fog = new THREE.FogExp2(fogColor, 0.5);
