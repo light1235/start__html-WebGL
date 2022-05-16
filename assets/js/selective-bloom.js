@@ -1,3 +1,7 @@
+//three.module.js:740 THREE.Color: Unknown color 0xFFFFFF
+//Если у обьекта нет цвета а только наложенные текстуры, вариант такой.
+// если mesh.material.color = '0xFFFFFF', bloom не работает на этот mesh.
+
 import * as THREE from 'three/build/three.module.js';
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
