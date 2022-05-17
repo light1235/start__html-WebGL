@@ -29,17 +29,18 @@ const MainFont = '/bold.json'; // если public/bold.json и с img тоже �
 
 
 //Model-loader-V2//////////////////////////////////////////////////////////
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 let loader = new THREE.GLTFLoader();
-loader.load('scene.gltf', handle_load);
+loader.load('img/scene.gltf', handle_load);
 
-let mesh;
+let Model;
 
 function handle_load(gltf){
-     mesh = gltf.scene.children[0];
-     mesh.material = new THREE.MeshLambertMaterial();
-     scene.add(mesh);
-     mesh.position.z = -10;
-     animate();
+     // Model = gltf.scene.children[0];
+     Model = gltf.scene;
+     Model.material = new THREE.MeshLambertMaterial();
+     scene.add( Model);
+     scene.add(new THREE.AxesHelper(500,500));
 }
 
 //---------------------------
@@ -122,7 +123,7 @@ const material = new  THREE.PointsMaterial({
 let sprite = new THREE.TextureLoader();
 sprite.load('../assets/img/1.jpg', function(materials){
      sprite.preload();
-}
+})
 
 //TextureLoader V3///////////////////////
 
