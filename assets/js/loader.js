@@ -26,7 +26,13 @@ loader.load(modelUrl, handle_load);
 const MainFont = '/bold.json'; // если public/bold.json и с img тоже самое
 
 //---------------------------
-
+ car.traverse( function ( child ) {
+          if ( child.isMesh ) {
+               child.castShadow = true;
+               child.receiveShadow = true;
+               child.material = myMaterial;
+              car.geometry.center() or child.geometry.center()
+}
 
 //Model-loader-V2//////////////////////////////////////////////////////////
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
