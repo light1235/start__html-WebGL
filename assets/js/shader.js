@@ -4,7 +4,10 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 const scene = new THREE.Scene();
 const camera = new THREE.OrthographicCamera( -1, 1 , 1, -1, 0.1, 100 );
 
-let renderer = new THREE.WebGLRenderer();
+let renderer = new THREE.WebGLRenderer({
+antialias: true,
+powerPreference: 'high-performance', 
+});
 renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.setClearColor(0xFFFCFF);
 let doc = document.querySelector('.main');
