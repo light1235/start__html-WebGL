@@ -35,6 +35,14 @@ const MainFont = '/bold.json'; // если public/bold.json и с img тоже �
 }
 
 //Model-loader-V2//////////////////////////////////////////////////////////
+      let  myMaterial = new THREE.MeshPhongMaterial({
+     color:"red",
+     specular: 0x000000,
+     shininess:0.9,
+     flatShading:false,
+     clipShadows: true,
+     side: THREE.DoubleSide
+});
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 let loader = new THREE.GLTFLoader();
 loader.load('img/scene.gltf', handle_load);
