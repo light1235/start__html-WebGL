@@ -12,6 +12,7 @@ powerPreference: 'high-performance',
 renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.setClearColor(0x202020);
 let doc = document.querySelector('.main');
+renderer.setAnimationLoop( animation );
 doc.appendChild( renderer.domElement );
 
 
@@ -75,19 +76,14 @@ const mesh = new THREE.Mesh(geometry,material);
 scene.add(mesh);
 
 
-
-
 camera.position.z = 20;
 const clock = new THREE.Clock();
 
-const animate = function () {
-     requestAnimationFrame( animate );
-     // controls.update();
-     mesh.rotation.y = clock.getElapsedTime();
-     // mesh.rotation.y += 0.01;
+function animation( time = 0 ) {
+     controls.update();
+     mesh.rotation.y = clock.getElapsedTime() * 2;
 
      mesh.rotation.y += ball.rotationY;
      renderer.render( scene, camera );
-};
+}
 
-animate();
