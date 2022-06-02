@@ -11,6 +11,7 @@ powerPreference: 'high-performance',
 renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.setClearColor(0xFFFCFF);
 let doc = document.querySelector('.main');
+renderer.setAnimationLoop( animation );
 doc.appendChild( renderer.domElement );
 
 
@@ -33,7 +34,7 @@ import  vertexShader from '../shaders/vertex.glsl';
 
 let gui = new dat.GUI();
 gui.add(ball,'rotationY').min(-0.2).max(0.2).step(0.001);
-let controls = new  THREE.OrbitControls(camera,renderer.domElement);
+let controls = new  OrbitControls(camera,renderer.domElement);
 
 
 const geometry = new THREE.PlaneGeometry( 2,2 );
@@ -50,13 +51,12 @@ scene.add(mesh);
 
 
 camera.position.z = 20;
+const clock = new THREE.Clock();
 
-const animate = function () {
-     requestAnimationFrame( animate );
-     // mesh.rotation.x += 0.01;
-     // mesh.rotation.y += 0.01;
-     mesh.rotation.y += ball.rotationY;
+function animation( time = 0 ) {
+     controls.update();
+     mesh.rotation.y = clock.getElapsedTime() * 2;
+
      renderer.render( scene, camera );
-};
+}
 
-animate();
