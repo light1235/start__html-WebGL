@@ -1,3 +1,6 @@
+// import {Perlin} from './perlin';
+// let perlin = new Perlin();
+// perlin.noise();
 class Perlin {
      constructor() {
           this.grad3 =
