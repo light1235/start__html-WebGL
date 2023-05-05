@@ -62,11 +62,9 @@ function handle_load(gltf){
 const loader = new GLTFLoader();
 
 const dracoLoader = new DRACOLoader();
-// dracoLoader.setDecoderPath( 'three/examples/js/libs/draco/' );
- dracoLoader.preload();
-// dracoLoader.setDecoderPath( '../node_modules/three/examples/js/libs/draco/' );
-// dracoLoader.setDecoderPath( 'https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/js/libs/draco/');
+dracoLoader.setDecoderPath( '../node_modules/three/examples/jsm/libs/draco/' );
 loader.setDRACOLoader( dracoLoader );
+dracoLoader.preload();
 // закинуть в папку паблик папку draco
 dracoLoader.setDecoderPath( '/draco/' );
 
@@ -80,8 +78,8 @@ function handle_load(gltf){
      mesh.castShadow = true;
      mesh.receiveShadow = true;
      scene.add(mesh);
-     mesh.position.z = -10;
-     mesh.position.y = -80;
+//      mesh.position.z = -10;
+//      mesh.position.y = -80;
      scene.add(new THREE.AxesHelper(500,500));
      animate();
 }
