@@ -9,6 +9,9 @@ module.exports = {
      },
      devServer: {
           port:4200
+            devMiddleware: {
+               writeToDisk: true, 
+          },
      },
      module: {
           rules: [
