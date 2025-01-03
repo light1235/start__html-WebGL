@@ -27,7 +27,7 @@
     "glslify": "^7.0.0",
     "glslify-loader": "^2.0.0",
     "raw-loader": "^4.0.1",
-    "three": "^0.152.2"
+    "three": "^0.169.0"
   },
   "browserify": {
     "transform": [
